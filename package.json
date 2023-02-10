@@ -1,0 +1,41 @@
+{
+  "name": "@ungap/set-methods",
+  "version": "0.0.0",
+  "description": "New Set methods polyfill",
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "unpkg": "./esm/index.js",
+  "scripts": {
+    "build": "npm run cjs",
+    "cjs": "ascjs esm/ cjs/"
+  },
+  "keywords": [
+    "Set",
+    "methods",
+    "intersection",
+    "union",
+    "difference",
+    "symmetricDifference",
+    "isSubsetOf",
+    "isSupersetOf",
+    "isDisjointFrom"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    "import": "./esm/index.js",
+    "default": "./cjs/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ungap/set-methods.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ungap/set-methods/issues"
+  },
+  "homepage": "https://github.com/ungap/set-methods#readme",
+  "devDependencies": {
+    "ascjs": "^5.0.1"
+  }
+}
