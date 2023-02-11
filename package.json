@@ -6,8 +6,9 @@
   "module": "./esm/index.js",
   "unpkg": "./esm/index.js",
   "scripts": {
-    "build": "npm run cjs",
-    "cjs": "ascjs esm/ cjs/"
+    "build": "npm run cjs && npm run test",
+    "cjs": "ascjs esm/ cjs/",
+    "test": "node test/index.js"
   },
   "keywords": [
     "Set",

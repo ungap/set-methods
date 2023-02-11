@@ -18,7 +18,7 @@
   if (!__proto__.difference)
     __proto__.difference = function difference(other) {
       return new Set(
-        [...this.union(other)]
+        [...this, ...other.keys()]
           .filter(hasNot, this.intersection(other))
       );
     };
@@ -26,12 +26,8 @@
   if (!__proto__.symmetricDifference)
     __proto__.symmetricDifference = function symmetricDifference(other) {
       const set = new Set(this);
-      for (const value of other.keys()) {
-        if (this.has(value))
-          set.delete(value);
-        else
-          set.add(value);
-      }
+      for (const value of other.keys())
+        set[this.has(value) ? 'delete' : 'add'](value);
       return set;
     };
 
